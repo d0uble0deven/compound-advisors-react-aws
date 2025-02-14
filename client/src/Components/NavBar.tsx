@@ -5,7 +5,9 @@ const Navbar: React.FC = () => {
     <nav className={styles.navbar}>
       <ul className={styles.navLinks}>
         <li className={styles.leftNav}>
-          <span to="/">
+          <a
+          // to="/"
+          >
             <svg
               className={styles.icon}
               xmlns="http://www.w3.org/2000/svg"
@@ -17,17 +19,17 @@ const Navbar: React.FC = () => {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              className="lucide lucide-house"
+              // className="lucide lucide-house"
             >
               <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
               <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
             </svg>
             {/* <Home className={styles.icon} /> */}
-          </span>
+          </a>
         </li>
         <li className={styles.centerNav}>
-          <span
-            to="https://www.fanzoo.com/"
+          <a
+            // to="https://www.fanzoo.com/"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.logo}
@@ -39,10 +41,12 @@ const Navbar: React.FC = () => {
               alt="Compound Logo"
               className={styles.logoImage}
             />
-          </span>
+          </a>
         </li>
         <li className={styles.rightNav}>
-          <span to="/Bookings">
+          <a
+          // to="/Bookings"
+          >
             {/* <Calendar className={styles.icon} /> */}
             <svg
               className={styles.icon}
@@ -55,14 +59,14 @@ const Navbar: React.FC = () => {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              className="lucide lucide-calendar"
+              // className="lucide lucide-calendar"
             >
               <path d="M8 2v4" />
               <path d="M16 2v4" />
               <rect width="18" height="18" x="3" y="4" rx="2" />
               <path d="M3 10h18" />
             </svg>
-          </span>
+          </a>
         </li>
       </ul>
     </nav>

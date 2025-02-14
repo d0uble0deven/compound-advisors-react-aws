@@ -5,7 +5,7 @@ import { InfoCircledIcon } from "@radix-ui/react-icons";
 import styles from "./styles/App.module.css";
 import BioModal from "./Components/BioModal";
 import AccountsModal from "./Components/AccountsModal";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 
 import AdvisorInterface from "./Interfaces/AdvisorInterface";
@@ -14,7 +14,8 @@ function App() {
   const [advisors, setAdvisors] = useState([]);
   const [filteredAdvisors, setFilteredAdvisors] = useState([]);
   const [selectedAdvisor, setSelectedAdvisor] = useState(null);
-  const [selectedAccountAdvisor, setSelectedAccountAdvisor] = useState(null);
+  const [selectedAccountAdvisor, setSelectedAccountAdvisor] =
+    useState<AdvisorInterface | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortColumn, setSortColumn] = useState(null);
   const [sortDirection, setSortDirection] = useState("asc");
@@ -33,7 +34,7 @@ function App() {
     const filtered = advisors.filter((advisor: AdvisorInterface) => {
       return (
         advisor.name.toLowerCase().includes(query) ||
-        advisor.totalassets.toString().includes(query) ||
+        advisor.totalassets?.toString().includes(query) ||
         advisor.custodians.some((c) => c.name.toLowerCase().includes(query))
       );
     });
@@ -46,7 +47,7 @@ function App() {
     setSortDirection(direction);
     setSortColumn(column);
 
-    const sortedData = [...filteredAdvisors].sort((a, b) => {
+    const sortedData = [...filteredAdvisors].sort((a: any, b: any) => {
       let aValue, bValue;
 
       if (column === "totalAssets") {
@@ -67,6 +68,7 @@ function App() {
   return (
     <div className={styles.container}>
       <Navbar />
+
       <h1>Compound Advisors</h1>
 
       <Callout.Root size="2" variant="soft" className={styles.callout}>
@@ -112,7 +114,7 @@ function App() {
         </Table.Header>
 
         <Table.Body>
-          {filteredAdvisors.map((advisor) => (
+          {filteredAdvisors.map((advisor: any) => (
             <Table.Row key={advisor.id}>
               <Table.RowHeaderCell className={styles.advisorCell}>
                 <img
@@ -134,7 +136,7 @@ function App() {
               <Table.Cell>
                 <ul className={styles.custodianList}>
                   {advisor.custodians?.length > 0 ? (
-                    advisor.custodians.map((c, index) => (
+                    advisor.custodians.map((c: any, index: any) => (
                       <li key={index}>{c.name}</li>
                     ))
                   ) : (

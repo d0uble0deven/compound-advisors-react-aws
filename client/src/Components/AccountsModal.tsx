@@ -6,7 +6,7 @@ import HoldingsPieChart from "./HoldingsPieChart";
 import AccountInterface from "../Interfaces/AccountInterface";
 
 interface AccountsModalProps {
-  advisorId: string;
+  advisorId: string | number;
   advisorName: string;
   onClose: () => void;
 }

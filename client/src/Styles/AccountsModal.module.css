@@ -1,21 +1,8 @@
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
 .modalContent {
   background-color: white;
-  padding: 20px;
+  padding: 16px;
   border-radius: 8px;
-  max-width: 800px;
+  max-width: 95vw; /* Reduce width on mobile */
   width: 90%;
   max-height: 85vh;
   overflow-y: auto;
@@ -32,14 +19,14 @@
   border-radius: 8px;
   background: #f9f9f9;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
 .holdingsSection {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -47,12 +34,10 @@
   margin-top: 10px;
 }
 
-.custodianList {
-  list-style-type: disc;
-  padding-left: 20px;
-  text-align: left;
-  margin-top: 10px;
-  flex: 1;
+@media (max-width: 768px) {
+  .holdingsSection {
+    flex-direction: column;
+  }
 }
 
 .pieChartContainer {
@@ -61,12 +46,16 @@
   justify-content: center;
 }
 
-.closeButton {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
+@media (max-width: 768px) {
+  .pieChartContainer {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .pieChartContainer svg {
+    width: 300px !important;
+    height: 300px !important;
+  }
 }

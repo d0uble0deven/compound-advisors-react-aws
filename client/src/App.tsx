@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     console.log("App - VITE_API_URL: ", import.meta.env.VITE_API_URL);
     axios
-      .get(`https://compound-dashboard-murex.vercel.app/api/advisors`)
+      .get(`https://compound-dashboard-server.vercel.app/api/advisors`)
       .then((res) => {
         // axios.get(`${import.meta.env.VITE_API_URL}/api/advisors`).then((res) => {
         setAdvisors(res.data);

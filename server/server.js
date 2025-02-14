@@ -7,14 +7,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: ["compound-dashboard-murex.vercel.app"], // Ensure your frontend URL is added
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["compound-dashboard-murex.vercel.app"],
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//     credentials: true,
+//   })
+// );
+
+app.use(cors());
 
 app.use((req, res, next) => {
   console.log(`Incoming request: ${req.method} ${req.url} from ${req.ip}`);

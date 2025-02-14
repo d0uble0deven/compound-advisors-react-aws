@@ -53,14 +53,6 @@ The project is deployed on **Vercel**.
 
 ---
 
-## **💳 Payment Information**
-
-- **Any credit card will work** – this is a mock integration.
-- Simply click **"Pay Now"** to book an experience.
-- No real payment is processed.
-
----
-
 ## Setup Instructions
 
 ### **1. Clone the Repository**
@@ -170,5 +162,5 @@ Then, open `http://localhost:5173/` in your browser.
 
 Developed by Dev Govindji
 
-- GitHub: [Your GitHub](https://github.com/d0uble0deven)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/DevGovindji)
+- GitHub: [My GitHub](https://github.com/d0uble0deven)
+- LinkedIn: [My LinkedIn](https://linkedin.com/in/DevGovindji)

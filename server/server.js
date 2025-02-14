@@ -12,7 +12,8 @@ const pool = new Pool({
   host: "advisor-db.cluster-cj4oa8og80dy.us-east-2.rds.amazonaws.com",
   database: "advisor_db",
   password: process.env.DB_PASSWORD,
-  port: 5432,
+  port: process.env.VITE_API_URL,
+  // port: 5432,
   ssl: { rejectUnauthorized: false },
 });
 

@@ -1,0 +1,118 @@
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.searchBar {
+  width: 80%;
+  max-width: 600px;
+  padding: 10px;
+  margin: 20px auto;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+}
+
+table {
+  min-width: 98vw;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background-color: #f4f4f4;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+th:hover {
+  background-color: rgb(255, 218, 170);
+}
+
+.advisorCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.advisorImage {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.bioButton {
+  background-color: #7392b7;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  margin-top: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.bioButton:hover {
+  background-color: #7392b7;
+}
+
+.accountButton {
+  background-color: #7392b7;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.accountButton:hover {
+  background-color: #7392b7;
+}
+
+.callout {
+  background-color: #7392b7;
+  /* background-color: rgba(255, 218, 170, 0.9); */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 25vw;
+  max-width: 100vw;
+  margin-bottom: 20px;
+}
+
+.callout:hover {
+  background-color: #7392b7;
+  /* background-color: rgb(255, 218, 170); */
+}
+
+.callout svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.custodianList {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+  display: inline-block;
+}

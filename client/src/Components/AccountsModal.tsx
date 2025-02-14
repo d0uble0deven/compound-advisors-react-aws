@@ -24,7 +24,10 @@ const AccountsModal: React.FC<AccountsModalProps> = ({
     axios;
     // .get(`http://localhost:5001/advisors/${advisorId}/accounts`)
     axios
-      .get(`${import.meta.env.VITE_API_URL}/api/advisors/${advisorId}/accounts`)
+      .get(
+        `https://compound-dashboard-murex.vercel.app/api/advisors/${advisorId}/accounts`
+      )
+      // .get(`${import.meta.env.VITE_API_URL}/api/advisors/${advisorId}/accounts`)
       .then((res) => setAccounts(res.data))
       .catch((err) => console.error("Error fetching accounts:", err))
       .finally(() => setLoading(false));

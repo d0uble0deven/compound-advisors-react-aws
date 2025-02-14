@@ -1,50 +1,174 @@
-# React + TypeScript + Vite
+# Compound Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Compound Dashboard is a fully responsive web application that allows users to learn more about their financial advisors and make informed decisions. Users can explore advisors' personal details, specializations, holdings, and assets.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## **🎥 Video**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Below is a demo video of the application.
 
-- Configure the top-level `parserOptions` property like this:
+- [Video - Desktop](https://youtu.be/LmBuaGtzRY0)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## Deployment
+
+The project is deployed on **Vercel**.
+
+- [Live Demo](https://compound-dashboard-f22r0dyci-dev94s-projects-9a098fa3.vercel.app)
+
+---
+
+## Tech Stack
+
+- **Frontend:** React, TypeScript
+- **Styles:** RadixUI, CSS Modules, Recharts
+- **Backend:** Node.js, AWS RDS (PostgreSQL)
+- **Deployment:** Vercel
+
+---
+
+## Features
+
+### **Backend**
+
+- `GET /advisors`: Retrieves a list of financial advisors.
+- `GET /advisors/:id/accounts`: Fetches accounts managed by a specific advisor.
+- `GET /accounts/:number/holdings`: Retrieves holdings within an investment account.
+
+### **Frontend**
+
+- Fully responsive design for desktop, tablet, and mobile.
+- Users can:
+  - View advisor profiles, bios, and assets.
+  - Explore advisors' investment accounts and holdings.
+  - Interact with **dynamic Pie Charts** for holdings breakdown.
+  - Sort and search advisors based on name, assets, and custodians.
+- **Modals for enhanced user interaction**:
+  - Bio Modal (Shows advisor bio and contact details).
+  - Accounts Modal (Displays holdings and an interactive Pie Chart).
+
+---
+
+## **💳 Payment Information**
+
+- **Any credit card will work** – this is a mock integration.
+- Simply click **"Pay Now"** to book an experience.
+- No real payment is processed.
+
+---
+
+## Setup Instructions
+
+### **1. Clone the Repository**
+
+```
+git clone https://github.com/d0uble0deven/compound-advisors-react-aws.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### **2. Environment Variables**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Create a `.env` file in the project root and add:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+DB_PASSWORD=your_postgresql_password_string
+
+SERVER_PORT=5001
+APP_URL=http://localhost:5173
+```
+
+### **3. Install Dependencies & Run the Project**
+
+```
+cd client
+npm install
+npm run dev
+cd ..
+cd server
+npm install
+npm run start
+cd ..
+```
+
+Then, open `http://localhost:5173/` in your browser.
+
+---
+
+## API Endpoints
+
+### `GET /advisors`
+
+```
+[
+  {
+    "id": "1",
+    "name": "Michael Smith",
+    "email": "michael@example.com",
+    "totalAssets": 7500000,
+    "custodians": [
+      { "name": "Fidelity", "repId": "1345" },
+      { "name": "Vanguard", "repId": "2764" }
+    ]
+  }
+]
+
+```
+
+### `GET /advisors/:id/accounts`
+
+```
+[
+  {
+    "id": 4,
+    "name": "Randall Taylor - Alternative Investments",
+    "number": "404445",
+    "custodian": "Schwab",
+    "holdings": [
+      { "ticker": "BTC-USD", "units": 2, "unitprice": 45000, "percentage": 55.0 },
+      { "ticker": "ETH-USD", "units": 10, "unitprice": 3200, "percentage": 30.0 }
+    ]
+  }
+]
+```
+
+### `GET /accounts/:number/holdings`
+
+```
+[
+  {
+    "ticker": "AAPL",
+    "units": 100,
+    "unitprice": 150,
+    "percentage": 50
+  },
+  {
+    "ticker": "GOOGL",
+    "units": 50,
+    "unitprice": 2800,
+    "percentage": 50
+  }
+]
+
+
+```
+
+---
+
+## **🎉If I Had More Time**
+
+- Fix spacing - some bullet points and icons are not perfectly aligned.
+- Add in skeleton loading for initial render.
+- Add in "No search results found" message when filtering returns no results.
+- If the app was more robust and needed to be more scalable - use **Atomic Design Principles** for splitting components, with **table cells as the atoms** and moving up from there.
+
+---
+
+## Author
+
+Developed by Dev Govindji
+
+- GitHub: [Your GitHub](https://github.com/d0uble0deven)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/DevGovindji)

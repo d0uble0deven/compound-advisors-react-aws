@@ -10,7 +10,7 @@ Compound Dashboard is a fully responsive web application that allows users to le
 
 Below is a demo video of the application.
 
-- [Video - Desktop](https://youtu.be/LmBuaGtzRY0)
+- [Video - Desktop](https://www.youtube.com/watch?v=Y_Us229_qcg)
 
 ---
 
@@ -18,7 +18,7 @@ Below is a demo video of the application.
 
 The project is deployed on **Vercel**.
 
-- [Live Demo](https://compound-dashboard-f22r0dyci-dev94s-projects-9a098fa3.vercel.app)
+- [Live Demo](https://compound-dashboard-client.vercel.app/)
 
 ---
 
@@ -85,7 +85,8 @@ npm run start
 cd ..
 ```
 
-Then, open `http://localhost:5173/` in your browser.
+Then, open `http://localhost:5173/` in your browser for the client.
+And, open `http://localhost:5001/` in your browser for the server.
 
 ---
 
@@ -151,7 +152,7 @@ Then, open `http://localhost:5173/` in your browser.
 
 ## **🎉If I Had More Time**
 
-- Fix spacing - some bullet points and icons are not perfectly aligned.
+- Fix spacing - some bullet points and icons are not perfectly aligned as well as the spacing in the Account Modal on mobile.
 - Add in skeleton loading for initial render.
 - Add in "No search results found" message when filtering returns no results.
 - If the app was more robust and needed to be more scalable - use **Atomic Design Principles** for splitting components, with **table cells as the atoms** and moving up from there.

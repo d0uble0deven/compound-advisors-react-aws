@@ -21,7 +21,8 @@ function App() {
   const [sortDirection, setSortDirection] = useState("asc");
 
   useEffect(() => {
-    axios.get("http://localhost:5001/advisors").then((res) => {
+    console.log("App - VITE_API_URL: ", import.meta.env.VITE_API_URL);
+    axios.get(`${import.meta.env.VITE_API_URL}/api/advisors`).then((res) => {
       setAdvisors(res.data);
       setFilteredAdvisors(res.data);
     });

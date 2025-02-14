@@ -20,8 +20,11 @@ const AccountsModal: React.FC<AccountsModalProps> = ({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.log("AccountsModal - VITE_API_URL: ", import.meta.env.VITE_API_URL);
+    axios;
+    // .get(`http://localhost:5001/advisors/${advisorId}/accounts`)
     axios
-      .get(`http://localhost:5001/advisors/${advisorId}/accounts`)
+      .get(`${import.meta.env.VITE_API_URL}/api/advisors/${advisorId}/accounts`)
       .then((res) => setAccounts(res.data))
       .catch((err) => console.error("Error fetching accounts:", err))
       .finally(() => setLoading(false));
